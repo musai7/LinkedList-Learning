@@ -1,5 +1,7 @@
 package com.bridgeit.linkedlist;
 
+import org.junit.Test;
+
 public class LinkedListPractice {
 	
 	private Node head;
@@ -85,6 +87,24 @@ public class LinkedListPractice {
 		return popLastKey;
 	}
 	
+	public boolean toSearch(int data) {
+		
+		if(head==null) {
+			System.out.println("List is empty");
+			return false;
+		}		
+		Node temp = head;
+		boolean isFound = false;
+		while(temp != null) {
+			if(temp.key == data) {
+				isFound = true;
+				break;
+			}
+			temp = temp.next;
+		}
+		return isFound;
+	}
+	
 	public void toPrint() {
 		if(head==null) {
 			System.out.println("linkedList is empty");
@@ -96,7 +116,6 @@ public class LinkedListPractice {
 				temp=temp.next;
 			}
 		}
-		System.out.println();
-		
+		System.out.println();	
 	}
 }
